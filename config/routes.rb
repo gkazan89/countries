@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get "/countries" => "countries#index"
+  get "/countries/new" => "countries#new"
+  post "/countries" => "countries#create"
   get "/countries/:id" => "countries#show"
 
   namespace :api do
