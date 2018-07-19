@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/countries/new" => "countries#new"
   post "/countries" => "countries#create"
   get "/countries/:id" => "countries#show"
+  get "/countries/:id/edit" => "countries#edit"
+  patch "/countries/:id" => "countries#update"
 
   namespace :api do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

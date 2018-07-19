@@ -15,12 +15,26 @@ class CountriesController < ApplicationController
       founded: params[:founded],
     )
     @country.save
-    redirect_to "/countries"
+    redirect_to "/countries/#{@country.id}"
   end
 
   def show 
     @country = Country.find_by(id: params[:id])
     render "show.html.erb"
+  end
+
+  def edit
+    @country = Country.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
+
+  def update
+    @country = Country.find_by(id: params[:id])
+    @country.name = params[:name]
+    @country.capital = params[:capital]
+    @country.founded = params[:founded]
+    @country.save
+    redirect_to "/countries/#{@country.id}"
   end
 end
 
