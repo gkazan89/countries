@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     delete "/countries/:id" => "countries#destroy"
 
     post "/users" => "users#create"
-
     post "/sessions" => "sessions#create"
   end
 end
